@@ -1,0 +1,174 @@
+/*Starting maincontent*/
+.main h1{
+	margin-left: 30px;
+	color: #4C5667;
+}
+.maincontent{
+	margin-top:10px;
+	width:100%;
+	height:auto;
+	
+	
+}
+.submaincontent{
+	margin-top:20px;
+	
+}
+.submaincontent h3{
+	text-decoration: none;
+    color: #4C5667;
+	
+}
+.submaincontent a{
+	text-decoration: none;
+	
+}
+.content1{
+	float:left;
+	width:302px;
+	margin-left:30px;
+	overflow:hidden;
+}
+.content1 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content1 img:hover{
+	transform:scale(1.1);
+}
+.content1 h3{
+	text-align:center;
+}
+
+.content2{
+	width:302px;
+	overflow:hidden;
+	float:left;
+	margin-left:20px;
+}
+.content2 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content2 img:hover{
+	transform:scale(1.1);
+}
+.content2 h3{
+	text-align:center;
+}
+.content3{
+	float:left;
+	margin-left:20px;
+	width:302px;
+	overflow:hidden;
+}
+.content3 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content3 img:hover{
+	transform:scale(1.1);
+}
+.content3 h3{
+	text-align:center;
+}
+
+.content4{
+	float:left;
+	width:302px;
+	margin-left:20px;
+	overflow:hidden;
+}
+.content4 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content4 img:hover{
+	transform:scale(1.1);
+}
+.content4 h3{
+	text-align:center;
+}
+
+.content5{
+	float:left;
+	width:302px;
+	margin-left:30px;
+	overflow:hidden;
+}
+.content5 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content5 img:hover{
+	transform:scale(1.1);
+}
+.content5 h3{
+	text-align:center;
+}
+.content6{
+	float:left;
+	margin-left: 20px;
+	width:302px;
+	overflow:hidden;
+}
+.content6 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content6 img:hover{
+	transform:scale(1.1);
+}
+.content6 h3{
+	text-align:center;
+}
+.content7{
+	float:left;
+	width:302px;
+	margin-left:20px;
+	overflow:hidden;
+}
+.content7 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content7 img:hover{
+	transform:scale(1.1);
+}
+.content7 h3{
+	text-align:center;
+}
+.content8{
+	float:left;
+	width:302px;
+	margin-left:20px;
+	overflow:hidden;
+}
+.content8 img{
+	border: 1px solid #9A9A9A;
+	width:300px;
+	height:180px;
+	transition:all 1s ease;
+}
+.content8 img:hover{
+	transform:scale(1.1);
+}
+.content8 h3{
+	text-align:center;
+}
+
+/*Ending maincontent*/

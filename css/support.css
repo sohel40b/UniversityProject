@@ -1,0 +1,61 @@
+body{
+    background: #F3F3F5;
+}
+.main{
+	background: #F3F3F5;
+	margin-bottom: 50px;
+}
+.main h2{
+	color: #526699;
+    margin-top:20px;
+	margin-left: 260px;
+}
+.main hr{
+	display: block;
+	margin-left:260px;
+	margin-right:280px;
+}
+.main .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 60%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	margin-left: 260px;
+}
+
+.main .active, .main .accordion:hover {
+    background-color: #ccc;
+}
+
+.main .accordion:after {
+	margin-left: 300px;
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.main .active:after {
+    content: "\2212";
+}
+
+.main .panel {
+	background: #F3F3F5;
+    padding: 0 18px;
+    background: #F3F3F5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.main .panel p{
+	margin-left: 242px;
+	margin-right: 260px;
+	text-align: justify;
+}
