@@ -1,13 +1,4 @@
-<?php include('../server.php'); ?>
 <?php include('../logout.php'); ?>
-
-<?php 
-   if(!isset($_SESSION['email'])){
-
-   	echo "<script>window.open('admin_login.php?not_admin=You are not an Admin','_self') </script>";
-    }
-    else{
-?>
 
 <!DOCTYPE html>
 <html>
@@ -54,7 +45,7 @@
 			<div class="all_content">
 			  <h2>Manage Content</h2>
 				    <div class="manage_content">	
-		              <a href='#'>Insert New Subject</a>
+		              <a href='insert_subject.php'>Insert New Subject</a>
 		              <a href='#'>View All Subject</a>
 		              <a href='#'>Insert New Semester</a>
 		              <a href='#'>View All Semester</a>
@@ -109,4 +100,3 @@
   </body>
 </html>
 
-<?php } ?>

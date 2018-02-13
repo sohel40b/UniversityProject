@@ -1,7 +1,11 @@
+<?php include('include/db.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Inserting Subject</title>
+
+    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 
 	<style>
 		#customers {
@@ -52,31 +56,62 @@
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Title</td>
-		    <td><input type="text" name="product_title"></td>
+		    <td><input type="text" name="subject_title" required></td>
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Semester</td>
-		    <td><input type="text" name="product_title"></td>
+		    <td>
+		    	<select name="subject_sem" required>
+		    		<option>Select a Semester</option>
+		    		<?php
+		    		  $get_sems = "select * from semester";
+					   	$run_sems = mysqli_query($con, $get_sems);
+
+					   	while ($row_sems=mysqli_fetch_array($run_sems)){
+
+					   		$sem_id = $row_sems['sem_id'];
+					   		$sem_title = $row_sems['sem_title'];
+					   		echo "<option value='$sem_id'>$sem_title</option>";
+					   	}
+		    		?>
+		    	</select>
+		    </td>
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Department</td>
-		    <td><input type="text" name="product_title"></td>
+		    <td>
+		    	<select name="subject_dept" required>
+		    		<option>Select a Deparment</option>
+		    		<?php
+		    		  $get_depts = "select * from department";
+					   	$run_depts = mysqli_query($con, $get_depts);
+
+					   	while ($row_depts=mysqli_fetch_array($run_depts)){
+
+					   		$dept_id = $row_depts['dept_id'];
+					   		$dept_title = $row_depts['dept_title'];
+					   		echo "<option value='$dept_id'>$dept_title</option>";
+					   	}
+
+		    		?>
+		    	</select>
+		    </td>
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Image</td>
-		    <td><input type="text" name="product_title"></td>
+		    <td><input type="file" name="subject_image" required></td>
 		  </tr>
 		  <tr>
-		    <td align="center">Subject Price</td>
-		    <td><input type="text" name="product_title"></td>
+		    <td align="center">Subject Cost</td>
+		    <td><input type="text" name="subject_cost" required></td>
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Description</td>
-		    <td><input type="text" name="product_title"></td>
+		    <td><textarea name="subject_desc" cols="20" rows="10"></textarea></td>
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Keywords</td>
-		    <td><input type="text" name="product_title"></td>
+		    <td><input type="text" name="subject_keywords" required></td>
 		  </tr>
 		  <tr>
 		  	<td colspan="2" align="right"><input type="submit" class="button" name="insert_post" value="Add Course"></td>
@@ -85,6 +120,46 @@
        </table>
 		
 	</form>
-    
 </body>
 </html>
+
+<?php
+
+    if(isset($_POST['insert_post'])){
+    	//getting the text data from the fields
+        $subject_title = $_POST['subject_title'];
+    	$subject_sem = $_POST['subject_sem'];
+    	$subject_dept = $_POST['subject_dept'];
+    	$subject_cost = $_POST['subject_cost'];
+    	$subject_desc = $_POST['subject_desc'];
+    	$subject_keywords = $_POST['subject_keywords'];
+
+    	//getting the image from the field
+    	$subject_image = $_FILES['subject_image']['name'];
+    	$subject_image_tmp = $_FILES['subject_image']['tmp_name'];
+    	move_uploaded_file($subject_image_tmp, "subject_images/$subject_image");
+        $insert_subject = "insert into subject (subject_sem,subject_dept,subject_title,subject_cost,subject_desc,subject_image,subject_keywords) values('$subject_sem','$subject_dept','$subject_title','$subject_cost','$subject_desc','$subject_image','$subject_keywords')";
+
+        $insert_sub = mysqli_query($con, $insert_subject);
+        if($insert_sub){
+        	echo "<script>alert('Subject Has Been Inserted')</script>";
+        	echo "<script>window.open('insert_subject.php','_self')</script>";
+
+        }
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+ ?>

@@ -1,4 +1,4 @@
-<?php include('../server.php'); ?>
+<?php include('admin_login_connection.php'); ?>
 <!DOCTYPE html>
 <html>
   <head>
