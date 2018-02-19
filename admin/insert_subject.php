@@ -4,9 +4,6 @@
 <head>
 	<title>Inserting Subject</title>
 
-    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
-
 	<style>
 		#customers {
 		    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -98,16 +95,12 @@
 		    </td>
 		  </tr>
 		  <tr>
-		    <td align="center">Subject Image</td>
-		    <td><input type="file" name="subject_image" required></td>
+		    <td align="center">Subject Code</td>
+		    <td><input type="text" name="subject_code" required></td>
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Cost</td>
 		    <td><input type="text" name="subject_cost" required></td>
-		  </tr>
-		  <tr>
-		    <td align="center">Subject Description</td>
-		    <td><textarea name="subject_desc" cols="20" rows="10"></textarea></td>
 		  </tr>
 		  <tr>
 		    <td align="center">Subject Keywords</td>
@@ -130,15 +123,11 @@
         $subject_title = $_POST['subject_title'];
     	$subject_sem = $_POST['subject_sem'];
     	$subject_dept = $_POST['subject_dept'];
+    	$subject_code = $_POST['subject_code'];
     	$subject_cost = $_POST['subject_cost'];
-    	$subject_desc = $_POST['subject_desc'];
     	$subject_keywords = $_POST['subject_keywords'];
 
-    	//getting the image from the field
-    	$subject_image = $_FILES['subject_image']['name'];
-    	$subject_image_tmp = $_FILES['subject_image']['tmp_name'];
-    	move_uploaded_file($subject_image_tmp, "subject_images/$subject_image");
-        $insert_subject = "insert into subject (subject_sem,subject_dept,subject_title,subject_cost,subject_desc,subject_image,subject_keywords) values('$subject_sem','$subject_dept','$subject_title','$subject_cost','$subject_desc','$subject_image','$subject_keywords')";
+        $insert_subject = "insert into subject (subject_sem,subject_dept,subject_code,subject_title,subject_cost,subject_keywords) values('$subject_sem','$subject_dept','$subject_code','$subject_title','$subject_cost','$subject_keywords')";
 
         $insert_sub = mysqli_query($con, $insert_subject);
         if($insert_sub){

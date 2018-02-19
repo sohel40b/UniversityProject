@@ -45,6 +45,43 @@
 
    }
 
+function getSub(){
+
+   global $con;
+
+   $get_sub = "select * from subject order by RAND() LIMIT 0,6";
+   $run_sub = mysqli_query($con, $get_sub);
+   while ($row_sub=mysqli_fetch_array($run_sub)) {
+      $sub_id = $row_sub['subject_id'];
+      $sub_sem = $row_sub['subject_sem'];
+      $sub_dept = $row_sub['subject_dept'];
+      $sub_code = $row_sub['subject_code'];
+      $sub_title = $row_sub['subject_title'];
+      $sub_cost = $row_sub['subject_cost'];
+
+      echo "
+         <div id='single_subject'>
+                 <tr>
+                   <td>$sub_code</td>
+                   <td>$sub_title</td>
+                   <td>$sub_cost</td>
+                   <td><button class='course'>Add to Course</button></td>
+                 </tr>
+         </div>
+
+
+        ";
+      
+   }
+
+
+
+
+
+
+
+
+}
 
 
 

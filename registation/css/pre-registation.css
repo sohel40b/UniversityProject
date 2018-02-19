@@ -185,7 +185,7 @@ textarea:focus{
 }
 .dept{
 	margin-top: 20px;
-    background: #174C1C;
+    background: #DDDDDD;
 	display: block;
 	overflow:hidden;
     top: 0;
@@ -193,13 +193,13 @@ textarea:focus{
 	bottom:0;
 }
 .dept h2{
-	font-family: 'Helvetica Neue', sans-serif;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight: bold; 
 	padding: 15px;
 	text-align: center;
 	text-decoration:none;
 	color: #ededed;
-	background-color: #092F0D;
+	background-color: #4CAF50;
  
 }
 .dept .department a{
@@ -207,8 +207,8 @@ textarea:focus{
 	text-decoration: none;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	color: #ededed; 
-	font-family: 'Helvetica Neue', sans-serif; 
+	color: #70747a; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 30px; 
 	font-weight: bold; 
 	letter-spacing: -1px; 
@@ -217,7 +217,7 @@ textarea:focus{
 }
 .sem{
 	margin-top: 20px;
-	background: #174C1C;
+	background: #DDDDDD;
 	display: block;
 	overflow:hidden;
     top: 0;
@@ -225,23 +225,23 @@ textarea:focus{
 	bottom:0;
 }
 .sem h2{
-    font-family: 'Helvetica Neue', sans-serif; 
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	margin-bottom: 15px;
 	padding: 15px;
 	text-align: center;
 	text-decoration:none;
 	color: #ededed;
-	background-color: #092F0D;
+	background-color: #4CAF50;
 }
 .sem .semester a{
 	display: block;
 	text-decoration: none;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	color: #ededed; 
-	font-family: 'Helvetica Neue', sans-serif; 
-	font-size: 20px; 
+	color: #70747a; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 19px; 
 	font-weight: bold; 
 	letter-spacing: -1px; 
 	line-height: 2; 
@@ -249,12 +249,53 @@ textarea:focus{
 }
 .content_area{
 	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: 50px;
 	float: left;
-	color: red;
 	
 }
+.subject_box{
+	width: 100%px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+#single_subject{
+	float: left;
 
+}
+#student_box {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#student_box td, #student_box th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#student_box tr:nth-child(even){background-color: #f2f2f2;}
+
+#student_box tr:hover {background-color: #ddd;}
+
+#student_box th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+.course {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
 
 

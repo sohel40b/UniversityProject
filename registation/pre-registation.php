@@ -1,6 +1,10 @@
 <?php include('../server.php'); ?>
 <?php include('../logout.php'); ?>
-
+<?php
+if(!$_SESSION["isLogin"] ){
+	header('location: ../login/login.php');
+}
+?>
 <?php include("../functions/functions.php"); ?>
 <!DOCTYPE html>
 <html>
@@ -92,7 +96,17 @@
 
 
 		   <div class="content_area">
-	                <a>hello</a>
+	                <div class="subject_box">
+	                	<table id="student_box">
+						  <tr>
+						    <th>Course Code</th>
+						    <th>Course Title</th>
+						    <th>Credit</th>
+						    <th>Add Course</th>
+						  </tr>
+						  <?php getSub(); ?>
+						</table>
+	                </div>
 	       </div>
 
 
