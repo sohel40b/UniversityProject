@@ -69,8 +69,8 @@
 		   if(mysqli_query($db, $sql)){
 				  $_SESSION['username'] = $username;
 		          //$_SESSION['success'] = "You are now logged in";
-		          //header('location: ../login/login.php');
-				  header('Location: ../login/login.php?register=true');
+		          //header('location: login.php');
+				  header('Location: login.php?register=true');
 		   }
 		 
 		   
@@ -100,7 +100,7 @@
 			   $_SESSION['username'] = $username;
 		       $_SESSION['isLogin'] = true ;
 			   
-		       header('location: ../student/dashboard.php');
+		       header('location: student/dashboard.php');
 		   }else{
 
 			   array_push($errors, "Wrong username/password combination");
@@ -114,7 +114,7 @@
    if(isset($_GET['logout'])){
 	   session_destroy();
 	   unset($_SESSION['username']);
-	   header('location: ../login/login.php');
+	   header('location: ../login.php');
    }
    */
 
