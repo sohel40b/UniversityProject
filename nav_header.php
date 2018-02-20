@@ -7,7 +7,7 @@
 		<a href="about.php">About</a>
 		<a href="contact.php">Contact</a>
 		<a href="support.php">Support</a>
-		<button onclick="window.location='login/login.php'" class="log">Log In</button>
-		<button onclick="window.location='register/register.php'" class="sign">Sign Up</button>
+		<button onclick="window.location='login.php'" class="log">Log In</button>
+		<button onclick="window.location='register.php'" class="sign">Sign Up</button>
 	</div>
 </div>
