@@ -5,19 +5,29 @@ body{
 	
 }
 
-
+/* Nav Start */
 .nav {
 	top: 0;
 	width: 100%;
 	overflow: hidden;
-    background-color: #1C6740;
 	display: block;
 	position: -webkit-sticky;
     position: sticky;
+    background-color: #1C6740;
 	
 }
+.nav .nav_img img {
+	float:left;
+	width:35px;
+	margin-top: 8px;
+	margin-right:22%;
+	margin-left:3%;
+}
+.nav .nav_img img:hover{
+	cursor: pointer;
+}
 
-.nav a {
+.nav .nav_cat a {
 	
 	  float: left;
 	  display: block;
@@ -28,7 +38,16 @@ body{
 	  font-size: 16px;
   
 }
-.nav button.log{
+.nav .nav_cat a:hover {
+  background-color:#589D44;
+  color: black;
+}
+
+.nav .nav_cat a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.nav .nav_cat button.log{
 	border-radius: 25px;
 	float:right;
 	 background-color:#1C6740;
@@ -47,14 +66,14 @@ body{
 	margin-right:1%;
 	outline:none;
 }
-.nav button.log:hover{
+.nav .nav_cat button.log:hover{
 	background-color:#1F5C3F;
 }
-.nav button.log:active{
+.nav .nav_cat button.log:active{
 		position:relative;
 	    top:1px;
 }
-.nav button.sign{
+.nav .nav_cat button.sign{
 	border-radius:25px;
 	float:right;
 	 background-color:#3D8744;
@@ -74,33 +93,15 @@ body{
 	display:block;
 	outline:none;
 }
-.nav button.sign:hover{
+.nav .nav_cat button.sign:hover{
 	background-color:#1F5C3F;
 }
-.nav button.sign:active{
+.nav .nav_cat button.sign:active{
 	position:relative;
 	top:1px;
 }
-
-.nav a:hover {
-  background-color:#589D44;
-  color: black;
-}
-
-.nav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-.nav img {
-	float:left;
-	width:35px;
-	margin-top: 8px;
-	margin-right:22%;
-	margin-left:3%;
-}
-.nav img:hover{
-	cursor: pointer;
-}
+/* Nav End */
+/* Slidebar Start */
 .slidebar{
 }
 
@@ -110,7 +111,9 @@ body{
 	width: 100%;
 	height: 100%;
 }
+/* Slidebar End */
 
+/* Content Start */
 .content{
 	
 }
@@ -135,13 +138,16 @@ body{
 	margin-top:5%;
 	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
+/* Content End */
+
+/* Second Slidebar Start */
 .slidebar2{
 	
 }
 .slidebar2 img{
 	margin-bottom: -4px;
 }
-
+/* Second Slidebar End */
 
 
 
