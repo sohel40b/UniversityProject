@@ -1,8 +1,5 @@
- <?php
- //logout
-   if(isset($_GET['logout'])){
-	   session_destroy();
-	   header('location: ../login.php');
-   }
-   
+<?php
+session_start();
+session_destroy();
+echo "<script>window.open('login.php?logged_out=You have logged out,come back soon','_self')</script>";
 ?>

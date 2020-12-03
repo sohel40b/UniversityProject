@@ -1,20 +1,18 @@
 <?php 
     include('manage_session.php'); 
+    include('db.php'); 
 	
 	$username = "";
 	$email = "";
 	$errors = array();
-
-   //connect to the database
-   $db = mysqli_connect('localhost','root', '', 'registration');
    
    //if the register button is clicked
    if (isset($_POST['register'])){
 	   
-	   $username = mysqli_real_escape_string($db,$_POST['username']);
-	   $email = mysqli_real_escape_string($db,$_POST['email']);
-	   $password_1 = mysqli_real_escape_string($db,$_POST['password_1']);
-	   $password_2 = mysqli_real_escape_string($db,$_POST['password_2']);
+	   $username = mysqli_real_escape_string($con,$_POST['username']);
+	   $email = mysqli_real_escape_string($con,$_POST['email']);
+	   $password_1 = mysqli_real_escape_string($con,$_POST['password_1']);
+	   $password_2 = mysqli_real_escape_string($con,$_POST['password_2']);
 	   
 	 
 	   
@@ -24,7 +22,7 @@
 	   }
 	   else{
 		     if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
-             array_push($errors, "Only letters are allowed.");
+             array_push($errors, "Only letters are allowed.Digit are not Allow.");
         }
 	   }
 	   if(empty($email)){
@@ -47,7 +45,7 @@
 	   
 	   //if username already exits
 	  $sql = "SELECT id FROM users WHERE username = '$username' LIMIT 1";
-	  $check_query = mysqli_query($db,$sql);
+	  $check_query = mysqli_query($con,$sql);
 	  $count_username = mysqli_num_rows($check_query);
 	  if($count_username > 0){
 					array_push($errors , "Username already exists");
@@ -55,7 +53,7 @@
 	   
 	   //if email already exists
 	  $sql = "SELECT id FROM users WHERE email = '$email' LIMIT 1";
-	  $check_query = mysqli_query($db,$sql);
+	  $check_query = mysqli_query($con,$sql);
 	  $count_email = mysqli_num_rows($check_query);
 	  if($count_email > 0){
 					array_push($errors , "Email already exists");
@@ -66,7 +64,7 @@
 		   $password = md5($password_1);
 		   $sql = "INSERT INTO users(username, email, password) 
 		   VALUES('$username', '$email', '$password')";
-		   if(mysqli_query($db, $sql)){
+		   if(mysqli_query($con, $sql)){
 				  $_SESSION['username'] = $username;
 		          //$_SESSION['success'] = "You are now logged in";
 		          //header('location: login.php');
@@ -81,8 +79,8 @@
    }
    //log user in from login page
    if(isset($_POST['login'])){
-	   $username = mysqli_real_escape_string($db,$_POST['username']);
-	   $password = mysqli_real_escape_string($db,$_POST['password']);
+	   $username = mysqli_real_escape_string($con,$_POST['username']);
+	   $password = mysqli_real_escape_string($con,$_POST['password']);
 	   
 	   //ensure that form fields are filled properly
 	   if(empty($username)){
@@ -94,13 +92,11 @@
 	   if(count($errors) == 0 ){
 		   $password = md5($password);
 		   $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-		   $result = mysqli_query($db, $query);
+		   $result = mysqli_query($con, $query);
 		   if(mysqli_num_rows($result) == 1){
 			   //log user in
 			   $_SESSION['username'] = $username;
-		       $_SESSION['isLogin'] = true ;
-			   
-		       header('location: student/dashboard.php');
+               header('location: student_dashboard/dashboard.php');
 		   }else{
 
 			   array_push($errors, "Wrong username/password combination");

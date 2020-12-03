@@ -38,6 +38,7 @@
 			*/
 		  }, 2000);
 	  </script>
+	  <h3 style="width: 300px; float: right; color: #1C6740; text-align: center; margin: 20px 20px; padding: 6px 6px;"><?php echo @$_GET['not_login']; ?> </h3>
   
      <div class="header">
 	    <h2>Login</h2>
